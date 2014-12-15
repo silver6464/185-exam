@@ -7,7 +7,7 @@ app = Flask(__name__)
 GAME = Game()
 @app.route('/')
 def hello_world():    
-    return render_template('index.html',name1=str(Team1.name),score1=str(Team1.score),name2=str(Team2.name),score2=str(Team2.score))
+    return render_template('index.html',name1=str(Team1.name),score1=str(GAME.get_team_score(Team1)),name2=str(Team2.name),score2=str(GAME.get_team_score(Team2)))
     
 
 if __name__ == '__main__':
@@ -22,6 +22,7 @@ if __name__ == '__main__':
     	print "##MENU##"
     	print "1 = Add score to", Team1.name
     	print "2 = Add score to", Team2.name
+        print "3 = Show scores."
         question1 = raw_input("Selection: ")
         if len(question1) > 0:
             answer1 = question1 #question1.upper()
@@ -63,6 +64,8 @@ if __name__ == '__main__':
                 	else:
                 		print "Invalid input!"
                 #break
+            elif answer1 == "3":
+                break
             else:
                 print "Invalid input!"
         print "Latest Scores:"
@@ -70,8 +73,8 @@ if __name__ == '__main__':
         print Team2.name," = ",GAME.get_team_score(Team2)
         print
         print
+    app.run(debug=True)    
         
-        hello_world()
         
         
 
