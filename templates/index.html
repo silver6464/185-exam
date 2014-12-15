@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Score App</title>
+</head>
+<body>
+	<center>
+		<h1>Score App</h1>
+		
+		<h2>
+			{% if name1 %}
+			<div>{{ name1 }} Score: <label id="team1-score">{{ score1 }}</label></div>	
+			{% endif %}
+			{% if name2 %}
+			<div>{{ name2 }} Score: <label id="team1-score">{{ score2 }}</label></div>	
+			{% endif %}
+		</h2>
+	</center>
+</body>
+</html>
