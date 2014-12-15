@@ -17,7 +17,7 @@ if __name__ == '__main__':
     GAME.add_team(Team2)
     print "Game has been started!"
     print   
-    app.run()
+    #app.run(debug=True)
     while True:    	
     	print "##MENU##"
     	print "1 = Add score to", Team1.name
@@ -70,6 +70,7 @@ if __name__ == '__main__':
         print Team2.name," = ",GAME.get_team_score(Team2)
         print
         print
+        
         hello_world()
         
         
