@@ -40,3 +40,11 @@ def then_group1_and_group2_are_displayed_in_the_webpage(step, score1, score2):
     world.response = world.browser.get('http://localhost:5000/')
     assert_equal(world.response.status_code, 200)
 
+@step(u'Given that "([^"]*)" is added a score of "([^"]*)"')
+def given_that_group1_is_added_a_score_of_group2(step, team_name, score):
+    Team1 = Team(team_name,score)
+    GAME.add_team(Team1)
+    assert_equal(2,int(GAME.get_team_score(Team1)) )
+@step(u'Then "([^"]*)" is returned')
+def then_group1_is_returned(step, group1):
+    assert False, 'This step must be implemented'

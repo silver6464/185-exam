@@ -10,7 +10,7 @@ Given that "Miami" earned 1 point
 When I get the score of "team 1"
 Then a score of "1" is returned
 
-Scenario: Display score of both teams
-Given that "Miami" has a score of "2"
-And "Lakers" has a score of "3"
-Then "2" and "3" are displayed in the webpage
+Scenario: Get score of "Miami"
+Given that "Miami" is added a score of "2"
+When I get the score of "Miami"
+Then "2" is returned
